@@ -1,0 +1,51 @@
+{
+  "policy" : {
+    "id" : null,
+    "name" : "AWS DynamoDB - Elevated Write Capacity Utilization",
+    "description" : "Write Capacity Utilization has been higher than expected for over 30 minutes; also, the actual value has been above 50% for that time.",
+    "scope" : {
+      "elementName" : "",
+      "elementType" : "DynamoDB",
+      "elementTags" : { }
+    },
+    "duration" : 1800,
+    "conditions" : [ {
+      "metric" : "netuitive.aws.dynamodb.writecapacityutilization",
+      "wildcard" : null,
+      "analytic" : "baselineDeviation",
+      "operator" : "defined",
+      "level" : null,
+      "level2" : null,
+      "metricThresholdLevel" : null,
+      "metricThresholdAnalytic" : null
+    }, {
+      "metric" : "netuitive.aws.dynamodb.writecapacityutilization",
+      "wildcard" : null,
+      "analytic" : "contextualDeviation",
+      "operator" : "defined",
+      "level" : null,
+      "level2" : null,
+      "metricThresholdLevel" : null,
+      "metricThresholdAnalytic" : null
+    }, {
+      "metric" : "netuitive.aws.dynamodb.writecapacityutilization",
+      "wildcard" : null,
+      "analytic" : "actual",
+      "operator" : ">",
+      "level" : 50.0,
+      "level2" : null,
+      "metricThresholdLevel" : null,
+      "metricThresholdAnalytic" : null
+    } ],
+    "actions" : [ {
+      "type" : "event",
+      "category" : 2
+    } ],
+    "enabled" : true,
+    "deleted" : false,
+    "originTenantId" : null,
+    "originPolicyId" : null,
+    "creatorEmail" : null,
+    "lastUpdated" : null
+  }
+}
