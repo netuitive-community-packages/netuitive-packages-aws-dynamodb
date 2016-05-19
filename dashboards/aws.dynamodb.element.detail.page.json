@@ -189,7 +189,7 @@
       "created" : "2016-05-11T21:59:42Z",
       "updated" : "2016-05-11T21:59:42Z"
     } ],
-    "type" : "DynamoDB",
+    "type" : "DYNAMODB",
     "private" : false
   }
 }
