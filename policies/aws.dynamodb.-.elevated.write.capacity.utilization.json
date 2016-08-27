@@ -5,6 +5,9 @@
     "description" : "Write Capacity Utilization has been higher than expected for over 30 minutes; also, the actual value has been above 50% for that time.",
     "scope" : {
       "elementName" : "",
+      "elementNameExclude" : null,
+      "fqnIncludes" : [ ],
+      "fqnExcludes" : [ ],
       "elementType" : "DynamoDB",
       "elementTags" : { }
     },
@@ -12,6 +15,7 @@
     "conditions" : [ {
       "metric" : "netuitive.aws.dynamodb.writecapacityutilization",
       "wildcard" : null,
+      "metricScopeTags" : { },
       "analytic" : "baselineDeviation",
       "operator" : "defined",
       "level" : null,
@@ -21,6 +25,7 @@
     }, {
       "metric" : "netuitive.aws.dynamodb.writecapacityutilization",
       "wildcard" : null,
+      "metricScopeTags" : { },
       "analytic" : "contextualDeviation",
       "operator" : "defined",
       "level" : null,
@@ -30,6 +35,7 @@
     }, {
       "metric" : "netuitive.aws.dynamodb.writecapacityutilization",
       "wildcard" : null,
+      "metricScopeTags" : { },
       "analytic" : "actual",
       "operator" : ">",
       "level" : 50.0,
@@ -37,6 +43,7 @@
       "metricThresholdLevel" : null,
       "metricThresholdAnalytic" : null
     } ],
+    "eventConditions" : [ ],
     "actions" : [ {
       "type" : "event",
       "category" : 2
