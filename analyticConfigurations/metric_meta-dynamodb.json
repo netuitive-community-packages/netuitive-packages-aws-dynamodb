@@ -12,10 +12,10 @@
         }
       },
       {
-        "match": "aws\\.dynamodb\\..*units",
+        "match": "aws\\.dynamodb\\.provisioned(read|write)capacityunits",
         "properties": {
           "STATISTIC": "sum",
-          "sparseDataStrategy": "ReplaceWithZero",
+          "sparseDataStrategy": "ReplaceWithLast",
           "tags": {
             "unit": "count"
           }
@@ -73,15 +73,6 @@
       },
       {
         "match": "aws.dynamodb.returneditemcount",
-        "properties": {
-          "sparseDataStrategy": "ReplaceWithZero",
-          "tags": {
-            "unit": "count"
-          }
-        }
-      },
-      {
-        "match": "aws.dynamodb.returnedrecordscount",
         "properties": {
           "sparseDataStrategy": "ReplaceWithZero",
           "tags": {
