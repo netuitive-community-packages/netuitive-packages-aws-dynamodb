@@ -1,121 +1,119 @@
 {
-  "analyticConfiguration" : {
-    "tenantId" : null,
-    "type" : "METRIC_META",
-    "id" : null,
-    "packageId" : null,
-    "name" : "DynamoDB",
-    "scope" : {
-      "elementName" : null,
-      "elementType" : "DynamoDB",
-      "elementTags" : null,
-      "metricMatches" : null
+  "analyticConfiguration": {
+    "metrics": [
+      {
+        "match": "aws\\.dynamodb\\..*requests",
+        "properties": {
+          "STATISTIC": "sum",
+          "sparseDataStrategy": "ReplaceWithZero",
+          "tags": {
+            "unit": "count"
+          }
+        }
+      },
+      {
+        "match": "aws\\.dynamodb\\.provisioned(read|write)capacityunits",
+        "properties": {
+          "STATISTIC": "sum",
+          "sparseDataStrategy": "ReplaceWithLast",
+          "tags": {
+            "unit": "count"
+          }
+        }
+      },
+      {
+        "match": "aws\\.dynamodb\\..*events",
+        "properties": {
+          "STATISTIC": "sum",
+          "sparseDataStrategy": "ReplaceWithZero",
+          "tags": {
+            "unit": "count"
+          }
+        }
+      },
+      {
+        "match": "aws\\.dynamodb\\..*errors",
+        "properties": {
+          "STATISTIC": "sum",
+          "sparseDataStrategy": "ReplaceWithZero",
+          "tags": {
+            "unit": "count"
+          }
+        }
+      },
+      {
+        "match": "aws.dynamodb.onlineindexconsumedwritecapacity",
+        "properties": {
+          "STATISTIC": "sum",
+          "sparseDataStrategy": "ReplaceWithZero",
+          "tags": {
+            "unit": "count"
+          }
+        }
+      },
+      {
+        "match": "aws.dynamodb.onlineindexpercentageprogress",
+        "properties": {
+          "STATISTIC": "max",
+          "sparseDataStrategy": "None",
+          "tags": {
+            "unit": "percent"
+          },
+          "validMax": 100
+        }
+      },
+      {
+        "match": "aws.dynamodb.returnedbytes",
+        "properties": {
+          "sparseDataStrategy": "ReplaceWithZero",
+          "tags": {
+            "unit": "bytes"
+          }
+        }
+      },
+      {
+        "match": "aws.dynamodb.returneditemcount",
+        "properties": {
+          "sparseDataStrategy": "ReplaceWithZero",
+          "tags": {
+            "unit": "count"
+          }
+        }
+      },
+      {
+        "match": "aws.dynamodb.successfulrequestlatency",
+        "properties": {
+          "sparseDataStrategy": "ReplaceWithZero",
+          "tags": {
+            "unit": "ms"
+          }
+        }
+      },
+      {
+        "match": "netuitive.aws.dynamodb.readcapacityutilization",
+        "properties": {
+          "tags": {
+            "unit": "percent",
+            "utilization": true
+          },
+          "validMax": 100
+        }
+      },
+      {
+        "match": "netuitive.aws.dynamodb.writecapacityutilization",
+        "properties": {
+          "tags": {
+            "unit": "percent",
+            "utilization": true
+          },
+          "validMax": 100
+        }
+      }
+    ],
+    "name": "DynamoDB",
+    "scope": {
+      "elementType": "DynamoDB"
     },
-    "metrics" : [ {
-      "match" : "aws\\.dynamodb\\..*requests",
-      "properties" : {
-        "sparseDataStrategy" : "ReplaceWithZero",
-        "STATISTIC" : "sum",
-        "tags" : {
-          "unit" : "count"
-        }
-      }
-    }, {
-      "match" : "aws\\.dynamodb\\..*units",
-      "properties" : {
-        "sparseDataStrategy" : "ReplaceWithZero",
-        "STATISTIC" : "sum",
-        "tags" : {
-          "unit" : "count"
-        }
-      }
-    }, {
-      "match" : "aws\\.dynamodb\\..*events",
-      "properties" : {
-        "sparseDataStrategy" : "ReplaceWithZero",
-        "STATISTIC" : "sum",
-        "tags" : {
-          "unit" : "count"
-        }
-      }
-    }, {
-      "match" : "aws\\.dynamodb\\..*errors",
-      "properties" : {
-        "sparseDataStrategy" : "ReplaceWithZero",
-        "STATISTIC" : "sum",
-        "tags" : {
-          "unit" : "count"
-        }
-      }
-    }, {
-      "match" : "aws.dynamodb.onlineindexconsumedwritecapacity",
-      "properties" : {
-        "sparseDataStrategy" : "ReplaceWithZero",
-        "STATISTIC" : "sum",
-        "tags" : {
-          "unit" : "count"
-        }
-      }
-    }, {
-      "match" : "aws.dynamodb.onlineindexpercentageprogress",
-      "properties" : {
-        "sparseDataStrategy" : "None",
-        "STATISTIC" : "max",
-        "tags" : {
-          "unit" : "percent"
-        },
-        "validMax" : 100
-      }
-    }, {
-      "match" : "aws.dynamodb.returnedbytes",
-      "properties" : {
-        "sparseDataStrategy" : "ReplaceWithZero",
-        "tags" : {
-          "unit" : "bytes"
-        }
-      }
-    }, {
-      "match" : "aws.dynamodb.returneditemcount",
-      "properties" : {
-        "sparseDataStrategy" : "ReplaceWithZero",
-        "tags" : {
-          "unit" : "count"
-        }
-      }
-    }, {
-      "match" : "aws.dynamodb.returnedrecordscount",
-      "properties" : {
-        "sparseDataStrategy" : "ReplaceWithZero",
-        "tags" : {
-          "unit" : "count"
-        }
-      }
-    }, {
-      "match" : "aws.dynamodb.successfulrequestlatency",
-      "properties" : {
-        "sparseDataStrategy" : "ReplaceWithZero",
-        "tags" : {
-          "unit" : "ms"
-        }
-      }
-    }, {
-      "match" : "netuitive.aws.dynamodb.readcapacityutilization",
-      "properties" : {
-        "tags" : {
-          "unit" : "percent",
-          "utilization" : true
-        },
-        "validMax" : 100
-      }
-    }, {
-      "match" : "netuitive.aws.dynamodb.writecapacityutilization",
-      "properties" : {
-        "tags" : {
-          "unit" : "percent",
-          "utilization" : true
-        },
-        "validMax" : 100
-      }
-    } ]
+    "type": "METRIC_META"
   }
 }
