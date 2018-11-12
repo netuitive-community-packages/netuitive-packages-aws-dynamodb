@@ -6,6 +6,8 @@ For detailed information on this package, please refer to the [online documentat
 
 ### Version next
 
+### Version 1.3.0
+
 * Adjusted build to use metricly-cli for validation
 * Applied appropriate metric sparse data strategies
 
