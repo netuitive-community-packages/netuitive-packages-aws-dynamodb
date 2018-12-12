@@ -37,12 +37,6 @@
         }
       },
       {
-        "properties": {
-          "baseline": false,
-          "correlation": false
-        }
-      },
-      {
         "match": "aws.dynamodb.systemerrors",
         "properties": {
           "baseline": false,
