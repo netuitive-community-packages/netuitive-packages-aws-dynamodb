@@ -6,6 +6,8 @@ For detailed information on this package, please refer to the [online documentat
 
 ### Version next
 
+* Remove empty ACE config
+
 ### Version 1.3.0
 
 * Adjusted build to use metricly-cli for validation
