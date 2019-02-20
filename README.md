@@ -6,6 +6,10 @@ For detailed information on this package, please refer to the [online documentat
 
 ### Version next
 
+### Version 1.4.0
+
+* Convert computed metrics to new format
+
 ### Version 1.3.1
 
 * Remove empty ACE config

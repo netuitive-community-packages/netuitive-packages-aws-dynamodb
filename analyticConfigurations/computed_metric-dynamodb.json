@@ -4,7 +4,9 @@
       {
         "match": "netuitive.aws.dynamodb.readcapacityutilization",
         "properties": {
-          "expression": "((data['aws.dynamodb.consumedreadcapacityunits'].sum / 300) / data['aws.dynamodb.provisionedreadcapacityunits'].actual) * 100",
+          "expressions": [
+            "100 * ${aws.dynamodb.consumedreadcapacityunits}.sum / ${aws.dynamodb.provisionedreadcapacityunits}.actual / 300"
+          ],
           "fqn": "netuitive.aws.dynamodb.readcapacityutilization",
           "name": "Read Capacity Utilization"
         }
@@ -12,7 +14,9 @@
       {
         "match": "netuitive.aws.dynamodb.writecapacityutilization",
         "properties": {
-          "expression": "((data['aws.dynamodb.consumedwritecapacityunits'].sum / 300) / data['aws.dynamodb.provisionedwritecapacityunits'].actual) * 100",
+          "expressions": [
+            "100 * ${aws.dynamodb.consumedwritecapacityunits}.sum / ${aws.dynamodb.provisionedwritecapacityunits}.actual / 300"
+          ],
           "fqn": "netuitive.aws.dynamodb.writecapacityutilization",
           "name": "Write Capacity Utilization"
         }
