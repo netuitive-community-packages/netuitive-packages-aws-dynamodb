@@ -30,7 +30,9 @@
     "enabled": true,
     "name": "AWS DynamoDB - Elevated Read Capacity Utilization",
     "scope": {
-      "elementType": "DynamoDB"
+      "elementTypes": [
+        "DynamoDB"
+      ]
     }
   }
 }
